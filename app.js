@@ -36,3 +36,19 @@ class Card {
 let myCard = new Card(5, 'diamonds')
 
 console.log(myCard.point, myCard.suit)
+
+//Hand
+
+class Hand {
+  constructor(handArray) {
+    this.handArray = []
+  }
+  addCard(card) {
+    this.handArray.push(card)
+  }
+  getPoints() {
+    let totalPoints = 0
+    this.handArray.forEach(card => totalPoints += card.point)
+    return totalPoints
+  }
+}
