@@ -28,6 +28,9 @@ class Card {
     this.point = point;
     this.suit = suit;
   }
+  getImageUrl() {
+    return ('images/' + this.point + '_of_' + this.suit + '.png')
+  }
 }
 
 let myCard = new Card(5, 'diamonds')
