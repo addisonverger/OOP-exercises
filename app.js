@@ -52,3 +52,26 @@ class Hand {
     return totalPoints
   }
 }
+
+//Deck
+
+class Deck {
+  constructor(deckArray) {
+    this.deckArray = []
+  }
+  addCard(card) {
+    this.deckArray.push(card)
+  }
+  draw() {
+    return this.deckArray.splice(0, 1)[0]
+  }
+  shuffle() {
+    for (let i = this.deckArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [this.deckArray[i], this.deckArray[j]] = [this.deckArray[j], this.deckArray[i]];
+    }
+  }
+  numCardsLeft() {
+    return this.deckArray.length
+  }
+}
